@@ -55,34 +55,16 @@
 						</li>
 						<li>
 							<a href="removenumber2.php" aria-expanded="false">
-							    <i class="glyphicon glyphicon-cog"></i>
+								<i class="glyphicon glyphicon-test"></i>
 								test
 							</a>
 						</li>
-						<li>
-							<a href="users.php">
-								<i class="glyphicon glyphicon-triangle-left"></i>
-								Users
-								<span class="pull-right"><?=counting("users", "id")?></span>
-							</a>
-						</li>
-						<li>
-							<a href="logout.php">
-								<i class="glyphicon glyphicon-log-out"></i>
-								Logout
-							</a>
-						</li>
-						<!-- New link -->
-						<li>
-							<a href="operation.php">
-								<i class="glyphicon glyphicon-cog"></i>
-								Operation
-							</a>
-						</li>
-					</ul>
+			<li><a href="users.php"> <i class="glyphicon glyphicon-triangle-left"></i>Users <span class="pull-right"><?=counting("users", "id")?></span></a></li>
+<li><a href="logout.php"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+				</ul>
 
 				<div class="visit">
-					<p class="text-center">APPOPS TEAM &hearts;</p>
+					<p class="text-center">Created using MAGE &hearts;</p>
 					<a href="https://github.com/housamz/php-mysql-admin-panel-generator" target="_blank" >Visit Project</a>
 				</div>
 			</nav><!-- /end sidebar -->
