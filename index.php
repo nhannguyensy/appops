@@ -32,7 +32,7 @@
 	<div class="container" style="margin-top:30px">
 		<div class="row">
 			<div class="col-sm-6 col-md-4 col-md-offset-4">
-				<h1 class="text-center">Mage Admin Panel</h1>
+				<h1 class="text-center">AppOps Admin Panel</h1>
 				<h2 class="text-center">Sign in</h2>
 				<div>
 					<form action="login.php" method="post" name="login">

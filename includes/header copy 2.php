@@ -46,47 +46,44 @@
 					</div><!-- /sidebar-header -->
 
 					<!-- start sidebar -->
-				<ul class="list-unstyled components">
-					<li>
-						<a href="home.php" aria-expanded="false">
-							<i class="glyphicon glyphicon-home"></i>
-							Home
-						</a>
-					</li>
-					<li>
-						<a href="removenumber2.php" aria-expanded="false">
-							<i class="glyphicon glyphicon-test"></i>
-							test
-						</a>
-					</li>
-					<li>
-						<a href="users.php">
-							<i class="glyphicon glyphicon-triangle-left"></i>
-							Users
-							<span class="pull-right"><?=counting("users", "id")?></span>
-						</a>
-					</li>
-					<li>
-						<a href="logout.php">
-							<i class="glyphicon glyphicon-log-out"></i>
-							Logout
-						</a>
-					</li>
-					<!-- New dropdown menu -->
-					<li>
-						<a href="#operationsSubmenu" data-toggle="collapse" aria-expanded="false">
-							<i class="glyphicon glyphicon-cog"></i>
-							Operations
-						</a>
-						<ul class="list-unstyled" id="operationsSubmenu"> <!-- Removed 'collapse' class -->
-							<li><a href="removenumber2.php">Operation 1</a></li>
-							<li><a href="operation2.php">Operation 2</a></li>
-						</ul>
-					</li>
-				</ul>
+					<ul class="list-unstyled components">
+						<li>
+							<a href="home.php" aria-expanded="false">
+								<i class="glyphicon glyphicon-home"></i>
+								Home
+							</a>
+						</li>
+						<li>
+							<a href="removenumber2.php" aria-expanded="false">
+							    <i class="glyphicon glyphicon-cog"></i>
+								test
+							</a>
+						</li>
+						<li>
+							<a href="users.php">
+								<i class="glyphicon glyphicon-triangle-left"></i>
+								Users
+								<span class="pull-right"><?=counting("users", "id")?></span>
+							</a>
+						</li>
+						<li>
+							<a href="logout.php">
+								<i class="glyphicon glyphicon-log-out"></i>
+								Logout
+							</a>
+						</li>
+						<!-- New link -->
+						<li>
+							<a href="operation.php">
+								<i class="glyphicon glyphicon-cog"></i>
+								Operation
+							</a>
+						</li>
+					</ul>
+
 				<div class="visit">
 					<p class="text-center">APPOPS TEAM &hearts;</p>
-					<a href="https://www.smartpayvn.com" target="_blank" >Visit Site</a>
+					<a href="https://github.com/housamz/php-mysql-admin-panel-generator" target="_blank" >Visit Project</a>
 				</div>
 			</nav><!-- /end sidebar -->
 
