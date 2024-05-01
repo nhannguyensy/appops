@@ -2,8 +2,8 @@
 // Include the MongoDB library
 require 'vendor/autoload.php';
 
-// Connect to MongoDB
-$client = new MongoDB\Client("mongodb://localhost:27017");
+// Connect to MongoDB with authentication
+$client = new MongoDB\Client("mongodb://admin:TyLLxEgnJGxR6kGF@10.1.1.158:27017?authSource=admin");
 
 // Select a database
 $db = $client->yourDatabaseName;
