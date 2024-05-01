@@ -1,0 +1,38 @@
+<?php
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+include "includes/header.php";
+
+// Create a log channel
+$log = new Logger('active');
+$log->pushHandler(new StreamHandler('./logs/active.log', Logger::INFO));
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $phoneNumber = $_POST['phone_number'];
+
+    // Call the API to remove the phone number
+    $url = 'http://api.smartpayvn.com/removenumber';
+    $data = ['phone_number' => $phoneNumber];
+    $response = file_get_contents($url . '?' . http_build_query($data));
+
+    // Log the phone number removal
+    $log->info('Phone number removed: ' . $phoneNumber);
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Phone Number</title>
+</head>
+<body>
+    <h1>Remove Phone Number</h1>
+    <form method="post">
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+<?php include "includes/footer.php";?>
+
