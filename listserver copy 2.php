@@ -25,7 +25,7 @@ $documents = $collection->find([], ['limit' => $resultsPerPage, 'skip' => $skip]
 
 // Start the table
 echo '<table>';
-echo '<tr><th>ID</th><th>Hostname</th><th>IP Address</th><th>Description</th><th>Actions</th></tr>';
+echo '<tr><th>ID</th><th>Hostname</th><th>IP Address</th><th>Description</th></tr>';
 
 // Display the documents
 foreach ($documents as $document) {
@@ -34,18 +34,11 @@ foreach ($documents as $document) {
     echo '<td>' . $document['hostname'] . '</td>';
     echo '<td>' . $document['ip address'] . '</td>';
     echo '<td>' . $document['description'] . '</td>';
-    echo '<td>';
-    echo '<a href="edit.php?id=' . $document['_id'] . '">Edit</a>'; // Edit button
-    echo '<a href="delete.php?id=' . $document['_id'] . '">Delete</a>'; // Delete button
-    echo '</td>';
     echo '</tr>';
 }
 
 // End the table
 echo '</table>';
-
-// Add button
-echo '<a href="add.php">Add</a>';
 
 // Calculate the total number of pages
 $totalDocuments = $collection->count();

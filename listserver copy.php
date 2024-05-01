@@ -1,5 +1,6 @@
 <?php
 // Include the MongoDB library
+include "includes/header.php";
 require 'vendor/autoload.php';
 
 // Connect to MongoDB with authentication
@@ -23,29 +24,12 @@ $skip = ($pageNumber - 1) * $resultsPerPage;
 // Retrieve the documents
 $documents = $collection->find([], ['limit' => $resultsPerPage, 'skip' => $skip]);
 
-// Start the table
-echo '<table>';
-echo '<tr><th>ID</th><th>Hostname</th><th>IP Address</th><th>Description</th><th>Actions</th></tr>';
-
 // Display the documents
 foreach ($documents as $document) {
-    echo '<tr>';
-    echo '<td>' . $document['_id'] . '</td>';
-    echo '<td>' . $document['hostname'] . '</td>';
-    echo '<td>' . $document['ip address'] . '</td>';
-    echo '<td>' . $document['description'] . '</td>';
-    echo '<td>';
-    echo '<a href="edit.php?id=' . $document['_id'] . '">Edit</a>'; // Edit button
-    echo '<a href="delete.php?id=' . $document['_id'] . '">Delete</a>'; // Delete button
-    echo '</td>';
-    echo '</tr>';
+    echo '<p>';
+    print_r($document);
+    echo '</p>';
 }
-
-// End the table
-echo '</table>';
-
-// Add button
-echo '<a href="add.php">Add</a>';
 
 // Calculate the total number of pages
 $totalDocuments = $collection->count();
@@ -56,3 +40,4 @@ for ($i = 1; $i <= $totalPages; $i++) {
     echo "<a href=\"?page=$i\">Page $i</a> ";
 }
 ?>
+<?php include "includes/footer.php";?>
