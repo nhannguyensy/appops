@@ -54,12 +54,6 @@
 						</a>
 					</li>
 					<li>
-						<a href="removenumber2.php" aria-expanded="false">
-							<i class="glyphicon glyphicon-test"></i>
-							test
-						</a>
-					</li>
-					<li>
 						<a href="users.php">
 							<i class="glyphicon glyphicon-triangle-left"></i>
 							Users
