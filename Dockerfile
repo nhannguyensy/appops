@@ -1,10 +1,12 @@
-# Use an official PHP runtime as a parent image
-FROM php:7.2-apache
+FROM php:7.4-apache
 
 # Install any needed packages specified in requirements.txt
 RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y git
+    apt-get upgrade -y && apt-get install git -y
+# Install MongoDB extension
+RUN apt-get install -y libssl-dev && \
+    pecl install mongodb && \
+    echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongo.ini
 
 # Enable mysqli extension
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
@@ -19,8 +21,9 @@ WORKDIR /var/www/html
 ADD . .
 RUN chmod 777 generated
 
-# Install Guzzle using Composer
-RUN composer require guzzlehttp/guzzle
+# Install dependencies using Composer
+#RUN composer install
+RUN composer require mongodb/mongodb guzzlehttp/guzzle
 
 # Expose port 80
 EXPOSE 80
