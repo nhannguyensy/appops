@@ -19,7 +19,7 @@ WORKDIR /var/www/html
 
 # Clone the project from GitHub
 ADD . .
-RUN chmod 777 generated
+RUN chmod 777 generated || echo "Folder not found!!!! Skip it"
 
 # Install dependencies using Composer
 #RUN composer install
